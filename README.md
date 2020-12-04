@@ -370,13 +370,35 @@ The data is divided into two classes, the projects which get cancelled and those
 There are a lot of missing data in terms of contract details and confounder variables. Please see the section on data description above. I kept variables where less than 1% of the data was missing and then imputed data based on appropriate logic such as regional medians, sector medians etc.
 ### Absence of Project Level Dynamic Data
 The biggest shortcoming of this study is that we do not have any project specific time-varying dynamic data. The only project specific data I have is static data on contract details. In the future, this study can be expanded to include time-varying project level data, including satellite data of project site, any period publicly disclosed financial reporting data, and other project specific data from twitter or other sources.
-## Feature Engineering
+## Data Transformation
+
+### Handling Time Series
+
+The test train split was done by restricting the train data to be from 2005 to 2012 and the test data was from 2013 to 2016. The choice of 2013 as the dividing point was done to give a 70-30 split between train and test data.
+
+Within the training set, TimeSeriesSplit was used for cross-validation so as to maintain the integrity of the time series structure of our data.
+
+### Unbalanced classes
+
+SMOTE was used to create synthetic data for our minority class.
+
+### One Hot Encoding and other Transformations
+
+Categorical data was OneHot Encoded. Numerical data was scaled.
+
+
 ## Logistic Regression Modeling
+Below are the results of the Logistic Regression Classifier. Overall macro average F-1 score was 44%, while the macro average precision and recall were 50% and 54% respectively.
 ![](images/LogisticConfusion.PNG)
 ## Decision Tree Modeling
+Below are the results of the Decision Tree  Classifier. Overall macro average F-1 score was 43%, while the macro average precision and recall were 50% and 65% respectively.
 ![](images/DecisionTreeConfusion.PNG)
 ## Random Forest Classifier
+Below are the results of the Random Forest Classifier. Overall macro average F-1 score was 50%, while the macro average precision and recall were 51% and 77% respectively.
 ![](images/RandomForestConfusion.PNG)
+
+Below is a list of features extracted from the Random Forest Model that we will employ for the Markov Chain Classifier.
+
 ![](images/RFFeatureImportance.PNG)
 ## Markov Chain Classifier
 Both Decision Tree Model and Random Forest Model led to the identification of the following static and dynamic variables as being important features:
