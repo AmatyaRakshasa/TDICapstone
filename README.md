@@ -22,30 +22,38 @@ The radiocommunication division of the International Telecommunication Union use
 # Data description
 
 The variables in the database are the follows:
-ID: Project ID
-IY: Investment Year
-Country: The country where the project is located
-Region: The region where the country is located. LAC (Latin America & Caribbean) , EAP (East Asia & Pacific) , MENA (Middle East & North Africa) , ECA (Europe & Central Asia) , AFR (Africa) , SAR (South Asia). No data in this database from the seventh region, North America.
-Income: Income level of countries in the database. The database has countries from three categories. Upper Middle Income,  Lower Middle Income, and Low Income
-IDA: Three categories for countries. 1. IDA: Elibile for deeply discounted below market loans. 2. Blended countries are transitioning to mature economies that are being phased out of deeply discounted loans. 3. Non-IDA countries are only elibile for slightly below market loans.
-FCY : Financial Closure Year
-FCM: Financial Closure Month
-Type: Type of project. Brownfield, Greenfield, Management & Lease, Divestiture
-Stype: Subtype of project. Thirteen categories.
+
+* **ID**: Project ID
+* **IY**: Investment Year
+* **Country**: The country where the project is located
+* **Region**: The region where the country is located. LAC (Latin America & Caribbean) , EAP (East Asia & Pacific) , MENA (Middle East & North Africa) , ECA (Europe & Central Asia) , AFR (Africa) , SAR (South Asia). No data in this database from the seventh region, North America.
+* **Income**: Income level of countries in the database. The database has countries from three categories. Upper Middle Income,  Lower Middle Income, and Low Income
+* **IDA**: Three categories for countries. 1. IDA: Elibile for deeply discounted below market loans. 2. Blended countries are transitioning to mature economies that are being phased out of deeply discounted loans. 3. Non-IDA countries are only elibile for slightly below market loans.
+
+* **FCY** : Financial Closure Year
+
+* **FCM**: Financial Closure Month
+
+* **Type**: Type of project. Brownfield, Greenfield, Management & Lease, Divestiture
+
+* **Stype**: Subtype of project. Thirteen categories.
         Full', 'Rehabilitate, operate, and transfer',
        'Build, operate, and transfer', 'Merchant', 'Lease contract',
        'Partial', 'Build, own, and operate',
        'Build, rehabilitate, operate, and transfer',
        'Management contract', 'Rehabilitate, lease or rent, and transfer',
        'Build, lease, and transfer', 'Rental', 'Other/NA'
-status_n: Project status. One of four: 'Active', 'Concluded', 'Cancelled', 'Distressed'. We are merging Distressed with Active.
-DSU: The date at which any information on the record was updated. Unused in the analysis.
-sector: Sector. 'ICT', 'Transport', 'Energy', 'Water and sewerage', 'Municipal Solid Waste'
-ssector: Sub-sector. Twelve types. 'Telecom', 'Toll Roads', 'Railroads', 'Seaports', 'Electricity',
+
+* **status_n**: Project status. One of four: 'Active', 'Concluded', 'Cancelled', 'Distressed'. We are merging Distressed with Active.
+
+* **DSU**: The date at which any information on the record was updated. Unused in the analysis.
+* **sector**: Sector. 'ICT', 'Transport', 'Energy', 'Water and sewerage', 'Municipal Solid Waste'
+
+* **ssector**: Sub-sector. Twelve types. 'Telecom', 'Toll Roads', 'Railroads', 'Seaports', 'Electricity',
        'Airports', 'Water Utility', 'Natural Gas', 'Treatment plant',
        'Treatment/ Disposal', 'Integrated MSW',
        'Collection and Transport'
-Segment: Further sub-classification of sector. 33 types. 'Other', 'Highway', 'Fixed assets and passenger',
+* **Segment**: Further sub-classification of sector. 33 types. 'Other', 'Highway', 'Fixed assets and passenger',
        'Runway and terminal', 'Electricity distribution  ',
        'Electricity generation',
        'Electricity distribution, generation, and transmission',
@@ -63,114 +71,120 @@ Segment: Further sub-classification of sector. 33 types. 'Other', 'Highway', 'Fi
        'Not Available', 'Cable',
        'Mechanical and Biological Treatment   (Composting, anaerobic digestion etc)',
        'Sorting and Recycling'
-period: Contract length. Mising values were replaced by sector medians.
-GGC: Government granting contract. Local, State/Provincial, or Federal
-VDGS: Dollar value of direct government support
-TIGS: Type of Indirect Govt Support.'Not Applicable', nan, 'Capital subsidy',
+* **period**: Contract length. Mising values were replaced by sector medians.
+
+* **GGC**: Government granting contract. Local, State/Provincial, or Federal
+
+* **VDGS**: Dollar value of direct government support
+
+* **TIGS**: Type of Indirect Govt Support.'Not Applicable', nan, 'Capital subsidy',
        'Capital subsidy, \n\nRevenue subsidy', 'Revenue subsidy',
        'In-kind'
-VIGS: Value of Indirect Govt support, in percentage
-Private: Percentage of private ownership, in percentage.
-fees: Money paid to the government to purchase an asset or the right to develop. In millions USD.
-physical: Investment in Physical infrastructure. millions USD.
-Investment: Total Project investment, millions of USD
-capacity: Measure of project size relevant to the sector. Categorical. 'Not Available/Other', 'KM', 'Number of connections               (thousands)', 'MW', 'Population (thousands)', 'Cubic meters per day (thousands)',Throughput (thousands of TEUs)',               'Number of runways', 'Number of working locomotives and cars'
-pcapacity: The numerical numbers corresponding to capacity.
-technol: Type of technology used in Energy projects. Categorical. 'Small Hydro (<50MW)', 'Diesel', 'Coal', 'Natural Gas',
+* **VIGS**: Value of Indirect Govt support, in percentage
+
+* **Private**: Percentage of private ownership, in percentage.
+
+* **fees**: Money paid to the government to purchase an asset or the right to develop. In millions USD.
+
+* **physical**: Investment in Physical infrastructure. millions USD.
+
+* **Investment**: Total Project investment, millions of USD
+
+* **capacity**: Measure of project size relevant to the sector. Categorical. 'Not Available/Other', 'KM', 'Number of connections               (thousands)', 'MW', 'Population (thousands)', 'Cubic meters per day (thousands)',Throughput (thousands of TEUs)',               'Number of runways', 'Number of working locomotives and cars'
+
+* **pcapacity**: The numerical numbers corresponding to capacity.
+
+* **technol**: Type of technology used in Energy projects. Categorical. 'Small Hydro (<50MW)', 'Diesel', 'Coal', 'Natural Gas',
        'Large Hydro (>50MW)', 'Waste', 'Enhanced Geothermal', 'Wind',
        'Biomass', 'Nuclear', 'Solar PV', 'Biogas', 'Solar CSP',
        'Natural Gas, Diesel'
-bid_crit: Bidding criteria. Categorical. 'Not Applicable', 'Highest % of revenue share with government',
+
+* **bid_crit**: Bidding criteria. Categorical. 'Not Applicable', 'Highest % of revenue share with government',
        'Not Available', 'Highest price paid to government',
        'Lowest cost of construction or operation', 'Other',
        'Lowest tariff', 'Lowest subsidy required',
        'Highest new investment', 'Lowest government payments'
-CAM: Contract award method. Categorical. 'Competitive bidding', 'Direct negotiation', 'License scheme',
+* **CAM**: Contract award method. Categorical. 'Competitive bidding', 'Direct negotiation', 'License scheme',
        'Competitive negotiation'
-numberb = Number of bidders
-Sponsortinte: Project sponsor, international or Domestic. Lots of missing data.
-Sponsor Country: Country of Project sponsor. Lots of missing data.
-PRS: Primary Revenue Source. Categorical. 'User fees', 'Other', 'Purchase Agreements (private & public)',
+* **numberb** = Number of bidders
+* **Sponsortinte**: Project sponsor, international or Domestic. Lots of missing data.
+
+* **Sponsor Country**: Country of Project sponsor. Lots of missing data.
+
+* **PRS**: Primary Revenue Source. Categorical. 'User fees', 'Other', 'Purchase Agreements (private & public)',
        'Annuity/availab.paymnt (fixed|variable)',
        'Sales to wholesale market
-OSR: Other Source of Revenue. 5 categories. 'Purchase Agreements (private & public)',
+* **OSR**: Other Source of Revenue. 5 categories. 'Purchase Agreements (private & public)',
        'Sales to wholesale market',
        'Annuity/availab.paymnt (fixed|variable)', 'User fees', 'Other'
-BS: Bilateral Support. Text data, unstructured on financial support from international banks. Will need Regex and Spacy Name       Entity recognition.
-Description: A paragraph of unstructured text in relation to the project.
-Funding Year: Year of any additonal funding.
-Debt: Debt in the capital structure. Millions of dollars.
-Equity: Equity value. Millions of dollars.
-cdebt: Commercial Debt, Millions of dollars
-mdebt: Multilateral Debt, Millions of dollars
-bdebt: Bilateral Debt, Millions of dollars
-idebt: Institutional Debt, Millions of dollars
-pdebt: Public Debt, Millions of dollars
-intl_debt: International Debt, Millions of dollars
-ldebt: Local Debt, Millions of dollars
-UP: Unsolicited Proposal. Yes or No.
-Publid Disclosure: Are contract details publicly disclosed? Binary.
-Description of Source: Links to source files. Mostly missing.
-bordercountries: Number of border countries
-shareborder: Project across borders
-countrycode: Three letter country code
-region: region code. Will drop. Repeated from earlier.
-regionname: full name of region code. Will drop. Repeated from earlier.
-adminregion: Same as region code. Will drop. Repeated from earlier.
-adminregionname: Same as full name of regionname. Will drop. Repeated from earlier.
-incomelevel: Will drop. Repeated from earlier.
-incomelevelname: Will drop. Repeated from earlier.
-lendingtype: Will drop. Repeated from earlier.
-lendingtypename: Will drop. Repeated from earlier.
-GDP: 2019 data.
-Population: 2019 data
-CPI: 2019 data
-investment_real: Total Investment in 2019 dollars. Millions
-realphysicalassets: Physical assets in 2019 dollars. Millions
-realfeestogovernment : Fees to Govt, 2019 dollars. Millions
-name: Project Name
-Renewables: Sub-category of energy projects. 'Conventional', 'Renewables'
-MLS: Whether a project has support from Multilateral institution or not. Binary.
-PPP: Whether a project is PPP or not. Binary.
-Banking_NPL_To_Total_Gross: Bank nonperforming loans to total gross loans (%)
-SystBankCrisis:  Indicator variable for systemic banking crisis in a country. Luc Laeven and Fabian Valencia, IMF Database.
-CurrCrisis:  Indicator variable for currency crisis in a country. Luc Laeven and Fabian Valencia, IMF Database.
-SovDebtCrisis: Indicator variable for central govt debt crisis in a country-year. Luc Laeven and Fabian Valencia, IMF Database.
-SovDebtRestr: Indicator variable for central govt debt restructuring in a country-year. Luc Laeven and Fabian Valencia, IMF Database.
-BizDisclIndex: Business extent of disclosure index (0=less disclosure to 10=more disclosure)
-TimeBizStart: Time required to start a business (days)
-CredtoPvt: Domestic credit to private sector (% of GDP)
-CurrAccBal: Current Account Balance (current USD)
-EmptoPop: Employment to population ratio (%)
-FDI: Foreign Direct Investment (current USD)
-CC3: Three letter Country Code. Repeated. Will be dropped.
-Banking Crisis:  Indicator variable, HBS data. Will be dropped.
-Systemic Crisis: Indicator variable, HBS data. Will be dropped.
-Domestic_debt_in_default: Indicator variable, HBS data. Will be dropped.
-Currency Crisis: Indicator variable, HBS data. Will be dropped.
-Inflation Crisis: Indicator variable, HBS data. Will be dropped.
-FX: FX Rates with respect to USD
-GDPcap: GDP per capita, current USD.
-GDPcapgrowth: GDP per capita growth (%)
-GDPgrowth: GDP growth (%)
-Total private debt, all instruments(percent of GDP): IMF and Global Monitor. Insufficient Data. Will not use.
-Household debt, all instruments(percent of GDP): IMF and Global Monitor. Insufficient Data. Will not use.
-Non-financial corporations debt, all instruments (percent of GDP): IMF and Global Monitor. Insufficient Data. Will not use.
-Total private debt,loans and debt securities (percent of GDP): IMF and Global Monitor. Will use
-Household debt, loans and debt securities (percent of GDP): IMF and Global Monitor. Insufficient Data. Will not use.
-Public sector debt (percent of GDP): IMF and Global Monitor. Insufficient Data. Will not use.
-Nonfinancial public sector debt (percent of GDP) : IMF and Global Monitor. Insufficient Data. Will not use.
-General government debt (percent of GDP): IMF and Global Monitor. May use on trucated dataset
-Central government debt (percent of GDP) : IMF and Global Monitor. May use on trucated dataset
-GovtDebttoGDP: Central government debt, total (% of GDP). World Bank data. Will not use. May use IMF data.
-Inflation: Inflation, World Bank data
-IRSpread: Interest Rate Spread, difference between borrowing and lending rates of Banks
-LegalRights: Strength of legal rights index (0=weak to 12=strong)
-LendingRiskp: Risk premium on lending (lending rate minus treasury bill rate, %)
-Natural Disaster Data: EM-DAT, CRED, Centre for Research on the Epidemiology of Disasters, Brussels, Belgium
-NetODAGNI: Net ODA (Official Development Assistance) received (% of GNI)
-PopGrowth: Population growth rate
+* **BS**: Bilateral Support. Text data, unstructured on financial support from international banks. Will need Regex and Spacy Name       Entity recognition.
 
+* **Description**: A paragraph of unstructured text in relation to the project.
+* **Funding Year**: Year of any additonal funding.
+* **Debt**: Debt in the capital structure. Millions of dollars.
+Equity: Equity value. Millions of dollars.
+* **cdebt**: Commercial Debt, Millions of dollars
+* **mdebt**: Multilateral Debt, Millions of dollars
+* **bdebt**: Bilateral Debt, Millions of dollars
+* **idebt**: Institutional Debt, Millions of dollars
+* **pdebt**: Public Debt, Millions of dollars
+* **intl_debt**: International Debt, Millions of dollars
+* **ldebt**: Local Debt, Millions of dollars
+* **UP**: Unsolicited Proposal. Yes or No.
+* **Public Disclosure**: Are contract details publicly disclosed? Binary.
+Description of Source: Links to source files. Mostly missing.
+
+* **bordercountries**: Number of border countries
+
+* **shareborder**: Project across borders
+* **countrycode**: Three letter country code
+* **region**: region code. Will drop. Repeated from earlier.
+* **regionname**: full name of region code. Will drop. Repeated from earlier.
+adminregion: Same as region code. Will drop. Repeated from earlier.
+
+* **adminregionname**: Same as full name of regionname. Will drop. Repeated from earlier.
+
+* **incomelevel**: Will drop. Repeated from earlier.
+* **incomelevelname**: Will drop. Repeated from earlier.
+
+* **lendingtype**: Will drop. Repeated from earlier.
+* **lendingtypename**: Will drop. Repeated from earlier.
+* **GDP**: 2019 data. Will drop.
+* **Population**: 2019 data. Will drop.
+* **CPI**: 2019 data. Will drop.
+* **investment_real**: Total Investment in 2019 dollars. Millions
+* **realphysicalassets**: Physical assets in 2019 dollars. Millions
+* **realfeestogovernment** : Fees to Govt, 2019 dollars. Millions
+* **name**: Project Name
+* **Renewables**: Sub-category of energy projects. 'Conventional', 'Renewables'
+* **MLS**: Whether a project has support from Multilateral institution or not. Binary.
+* **PPP**: Whether a project is PPP or not. Binary.
+* **Banking_NPL_To_Total_Gross**: Bank nonperforming loans to total gross loans (%)
+* **SystBankCrisis**:  Indicator variable for systemic banking crisis in a country. Luc Laeven and Fabian Valencia, IMF Database.
+* **CurrCrisis**:  Indicator variable for currency crisis in a country. Luc Laeven and Fabian Valencia, IMF Database.
+* **SovDebtCrisis**: Indicator variable for central govt debt crisis in a country-year. Luc Laeven and Fabian Valencia, IMF Database.
+* **SovDebtRestr**: Indicator variable for central govt debt restructuring in a country-year. Luc Laeven and Fabian Valencia, IMF Database.
+* **BizDisclIndex**: Business extent of disclosure index (0=less disclosure to 10=more disclosure)
+* **TimeBizStart**: Time required to start a business (days)
+* **CredtoPvt**: Domestic credit to private sector (% of GDP)
+* **CurrAccBal**: Current Account Balance (current USD)
+* **EmptoPop**: Employment to population ratio (%)
+* **FDI**: Foreign Direct Investment (current USD)
+* **FX**: FX Rates with respect to USD
+* **GDPcap**: GDP per capita, current USD.
+* **GDPcapgrowth**: GDP per capita growth (%)
+* **GDPgrowth**: GDP growth (%)
+* **General government debt (percent of GDP)**: IMF and Global Monitor. May use on trucated dataset
+* **Central government debt (percent of GDP)** : IMF and Global Monitor. May use on trucated dataset
+* **GovtDebttoGDP**: Central government debt, total (% of GDP). World Bank data. Will not use. May use IMF data.
+* **Inflation**: Inflation, World Bank data
+* **IRSpread**: Interest Rate Spread, difference between borrowing and lending rates of Banks
+* **LegalRights**: Strength of legal rights index (0=weak to 12=strong)
+* **LendingRiskp**: Risk premium on lending (lending rate minus treasury bill rate, %)
+* **Natural Disaster Data**: EM-DAT, CRED, Centre for Research on the Epidemiology of Disasters, Brussels, Belgium
+* **NetODAGNI**: Net ODA (Official Development Assistance) received (% of GNI)
+* **PopGrowth**: Population growth rate
+* **Political Violence Data** : Indicator variables on major episodes of political violence, ethic violence, wars, civil violence.
 ## Data Description Table
 
 | Variable Name | Variable Description | Type | Missing Values | Imputation | Transformation | Range |
