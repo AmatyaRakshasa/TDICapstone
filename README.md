@@ -23,6 +23,13 @@ The radiocommunication division of the International Telecommunication Union use
 ![](images/ProjectCountByRegion.png)
 ![](images/ProjectCountBySector.png)
 ![](images/ProjectCountByYear.png)
+![](images/ProjectCancelled.png)
+![](images/ProjectAgeAtCancellation.png)
+![](images/ProjectAgeAtCancellationCount.png)
+![](images/ProjectAgeAtCancellationvsContractLength.png)
+![](images/ProjectTimeRemainingAtCancellation.png)
+![](images/ProjectTimeRemainingAtCancellationvsContractLength.png)
+
 # Modeling Approach
 ## Main Modelling Challenges
 ### Unbalanced Classes
