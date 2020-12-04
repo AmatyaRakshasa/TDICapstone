@@ -20,6 +20,9 @@ The World Development Indicators is a compilation of relevant, high-quality, and
 * [International Telecommunication Union Country Codes](https://www.itu.int/online/mm/scripts/gensel8)
 The radiocommunication division of the International Telecommunication Union uses the following letter codes to identify its member countries.
 # Data Exploration
+![](images/ProjectCountByRegion.png)
+![](images/ProjectCountBySector.png)
+![](images/ProjectCountByYear.png)
 # Modeling Approach
 ## Main Modelling Challenges
 ### Unbalanced Classes
