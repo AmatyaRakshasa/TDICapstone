@@ -1,5 +1,24 @@
 # TDICapstone : Predicting Project Cancellation for Public Private Infrastructure Projects
 # Introduction
+A Public–Private Partnership (PPP) is a cooperative arrangement between two or more public and private sectors, typically of a long-term nature. The PPP model is an example of multi-stakeholder governance. It involves governments and private sector entities that work together to complete a project and/or to provide services to the population. PPPs have been implemented in multiple countries, are primarily used for infrastructure projects, such as the building and equipping of schools, hospitals, transport systems, and water and sewerage systems. PPPs offer access to private capital, helping to alleviate the fiscal burden on governments by spreading the upfront capital cost of infrastructure over the lifetime of the asset. PPPs are also a way for governments to tap into private sector expertise to deliver and operate complex projects.
+
+
+
+PPPs for infrastructure require that governments learn how to harness the strengths of the private sector while preserving public interest and affordability of infrastructure services, all within long-term contractual relationships subject to inevitable uncertainties over time. The PPP – while a powerful and effective tool for infrastructure delivery – requires sound design and management, a good appreciation of public direct and contingent liabilities, a certain degree of customization to the local context, and the management of relationships between the public and privates sectors over long periods.
+
+
+
+While the success of PPP involves multiple aspects of performance (e.g. service outcomes, attainment of sector goals, profitability, etc.), some PPPs fail and others succeed because PPPs are complex arrangements that require the alignment and constant adjustment of many working parts to succeed over the long-term requirements that demand multiple kinds of learning to discover, fine-tune, and maintain workable arrangements. More importantly, successful implementation requires dealing with distinct local legal, financial, regulatory, economic, and physical contexts, as some PPP situations are unique, shared knowledge that emerges through practice and engagement is likely to be important to improving PPP arrangements.
+
+
+
+In addition to legal, regulatory, and contractual factors (i.e., the realm of institutions), the role of agency in PPP success is also of interest. Key participants include contract-granting government units, private operators and sponsors, regulators, and financiers. Each of these parties play a different role in the PPP and brings a different set of interests, resources, and strategies to the management, oversight, financing, and overall execution of the PPP. In the context of developing regions, another important set of stakeholders includes the multilateral development institutions that are engaged in supporting PPPs through sector reform, technical assistance and financial support.
+
+
+
+When it comes to successful implementation of PPP, contract survival is considered as one of the highly important factors due to the high costs of early termination and renegotiation. Moreover, PPP cancellation is a clear sign that significant and insurmountable problems between parties to the contract could not be overcome via intra-contractual adjustments, renegotiation, or at extremis, arbitration. Because the transaction costs of contract cancellation and renegotiation are high, the question of how PPPs can be sustained is important. The survival of a contract to its intended term implicitly recognizes that all parties to the contract are sufficiently satisfied with the PPP outcomes, such that they wish to remain in the contractual relationship enshrined within the PPP arrangement.
+
+In this study we develop a predictive model of PPP cancellation. We use contract level data on PPP contracts along with wider control data such as political violence in the country, natural disasters, macro-financial data at a country level, data on the quality of legal and government institutions. We employ a variety of models to predict cancellation. One short-coming of this study is that we do not have time-varying data at a project level.
 # Data Description and Ingestion
 * [PPI Database](https://ppi.worldbank.org/en/ppidata)
 The Private Participation in Infrastructure (PPI) Project Database has data on over 6,400 infrastructure projects in 137 low- and middle-income countries. The database is the leading source of PPI trends in the developing world, covering projects in the energy, transport, water and sewerage, ICT backbone, and Municipal Solid Waste (MSW) sectors (MSW data includes projects since 2008) Projects include management or lease contracts, concessions, greenfield projects, and divestitures.
@@ -451,4 +470,13 @@ Below is an example of a transition matrix. We construct one transition matrix f
 
 ![](images/TransitionMatrix.PNG)
 
+Below are the results of our three Markov Classifier Models in the three clusters. SMOTE was used to balance classes. We find that while the Markov Classifier seems to do better at accurately predicting cancelled projects, it has too many false positives at this stage for it to be considered a useful model.
+
+![](images/MCCluster0.PNG)
+
+![](images/MCCluster1.PNG)
+
+![](images/MCCluster2.PNG)
+
 ## Conclusion and Future Work
+More work can be done in feature construction, dimensionality reduction, and clustering in the Markov Classifier Model. 
