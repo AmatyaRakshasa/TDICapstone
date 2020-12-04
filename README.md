@@ -358,7 +358,42 @@ The biggest shortcoming of this study is that we do not have any project specifi
 ![](images/RandomForestConfusion.PNG)
 ![](images/RFFeatureImportance.PNG)
 ## Markov Chain Classifier
+Both Decision Tree Model and Random Forest Model led to the identification of the following static and dynamic variables as being important features:
+
 ![](images/EventPattern.PNG)
+
+We can see that some of the identified features are static while others are dynamic.
+
+Static:
+1. stype : contract sub-type
+2. Region
+3. type: Type of contract
+4. sector: Sector
+5. income: Income level of country
+6. FCM: Financial Closure Month
+
+Dynamic:
+1. GDPcap: GDP per capita
+2. intind: War in the country in realtion to independence movements
+3. ethviol: Ethnic violence in the country
+4. civiol: Civil violence in the country
+5. ethwar: Ethic war in the country
+6. FX: FX rate
+7. intviol: Internal violence
+8. Extra-terrestrial: A hazard caused by asteroids, meteoroids, and comets as they pass near-earth, enter the Earth’s atmosphere, and/or strike the Earth, and by changes in interplanetary conditions that eﬀect the Earth’s magnetosphere, ionosphere, and thermosphere
+9. Climatological: A hazard caused by long-lived, meso- to macro-scale atmospheric processes ranging from intra-seasonal to multi-decadal climate variability
+10. intot: Total internal violence
+11. GDPcapgrowth: GDP per cap growth
+12. Complex disasters: Major famine situation for which the drought was not the main causal factor.
+13. Hydrological: A hazard caused by the occurrence, movement, and distribution of surface and subsurface freshwater and saltwater.
+14. Geophysical:Events originating from solid earth.
+
+As a first step, we take the static variables and use K-Means clustering to cluster out train data into clusters and then develop a separate classifier for each cluster. After running a K-Means clustering algorithm, we settled on three clusters.
+
+As a second step towards building this classifier, we construct a Markov State Transition model for each cluster. So given a cluster, We develop a state transition  probability matrix. We model dynamic variables using three variables with three states each (high, medium, or low) so we have 27 states and the transition matrix will be 27 x 27. A matrix element value in the matrix is the probability of transitioning from one state to another.
+
+The static features fit into three categories, namely Macro-financial, Natural disaster, and Political Violence. We use Principal Component Analysis to reduce the fourteen dynamic variables to three dynamic variables and then further discretize the dynamic variables into High, Medium, Low categories.
+
 ![](images/TransitionMatrix.PNG)
 
 ## Conclusion and Future Work
