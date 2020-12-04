@@ -389,13 +389,19 @@ Categorical data was OneHot Encoded. Numerical data was scaled.
 
 ## Logistic Regression Modeling
 Below are the results of the Logistic Regression Classifier. Overall macro average F-1 score was 44%, while the macro average precision and recall were 50% and 54% respectively.
+
 ![](images/LogisticConfusion.PNG)
+
 ## Decision Tree Modeling
 Below are the results of the Decision Tree  Classifier. Overall macro average F-1 score was 43%, while the macro average precision and recall were 50% and 65% respectively.
+
 ![](images/DecisionTreeConfusion.PNG)
+
 ## Random Forest Classifier
 Below are the results of the Random Forest Classifier. Overall macro average F-1 score was 50%, while the macro average precision and recall were 51% and 77% respectively.
+
 ![](images/RandomForestConfusion.PNG)
+
 
 Below is a list of features extracted from the Random Forest Model that we will employ for the Markov Chain Classifier.
 
