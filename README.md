@@ -319,12 +319,31 @@ adminregion: Same as region code. Will drop. Repeated from earlier.
 
 # Data Exploration
 ![](images/ProjectCountByRegion.png)
+
+East Asia and Pacific (EAP) have the most number of projects in our database in the 2005-2005 time period with Latin America and the Caribbean (LAC) having the second most. Sub-Saharan Africa (AFR) and Middle East & North Africa (MENA) make the smallest contributions to our dataset.
+
 ![](images/ProjectCountBySector.png)
+
+Energy projects make up the bulk of our dataset followed by Transportation.
+
 ![](images/ProjectCountByYear.png)
+
+The distribution of projects is pretty even across time with a minor dip after the 2008 Financial crisis.
+
 ![](images/ProjectCancelled.png)
+
+Project status falls into four categories, namely "Active", "Distressed", "Concluded" or "Cancelled". We converted the data into two categories, "Cancelled" or "Not Cancelled". Given our modelling approach, the cancelled projects represent anywhere from 1% to 0.2% of our data.
+
 ![](images/ProjectAgeAtCancellation.png)
+
+The first decade of the project is where most of the project cancellation risk lies.
+
+
 ![](images/ProjectAgeAtCancellationCount.png)
 ![](images/ProjectAgeAtCancellationvsContractLength.png)
+
+In the above plot, we see contract length against project age at the time of cancellation. Again we see that the first decade is where most of the cancellation risk resides.
+
 ![](images/ProjectTimeRemainingAtCancellation.png)
 ![](images/ProjectTimeRemainingAtCancellationvsContractLength.png)
 
@@ -332,7 +351,9 @@ adminregion: Same as region code. Will drop. Repeated from earlier.
 I am following two modelling approaches.
 ## Path Independence
  In the first approach I assume path independence and assume that the confounder variables from the previous year have all relevant information. For instance, consider the following raw data:
+
  ![](images/RawDataExample.PNG)
+
  Here we have two projects. One project stays alive and is successfully concluded when the contract ends. The second project gets cancelled into the third year of its contract. I convert these two data points into 7 data points. The first project converts into 3 data points where it is alive in two years and dead in the third. The second project converts into four data points, one for each year in its contracted period where the project was alive. In the original data set, 1.2% of the projects get cancelled. After exploding the dataset in this fashion, 0.23% of the data represents cancelled projects.
 
 
@@ -360,7 +381,7 @@ The biggest shortcoming of this study is that we do not have any project specifi
 ## Markov Chain Classifier
 Both Decision Tree Model and Random Forest Model led to the identification of the following static and dynamic variables as being important features:
 
-![](images/EventPattern.PNG)
+
 
 We can see that some of the identified features are static while others are dynamic.
 
@@ -393,6 +414,12 @@ As a first step, we take the static variables and use K-Means clustering to clus
 As a second step towards building this classifier, we construct a Markov State Transition model for each cluster. So given a cluster, We develop a state transition  probability matrix. We model dynamic variables using three variables with three states each (high, medium, or low) so we have 27 states and the transition matrix will be 27 x 27. A matrix element value in the matrix is the probability of transitioning from one state to another.
 
 The static features fit into three categories, namely Macro-financial, Natural disaster, and Political Violence. We use Principal Component Analysis to reduce the fourteen dynamic variables to three dynamic variables and then further discretize the dynamic variables into High, Medium, Low categories.
+
+Below is a sample of what event patterns looks like for projects.
+
+![](images/EventPattern.PNG)
+
+Below is an example of a transition matrix. We construct one transition matrix for projects which are active and another transition matrix for projects which get cancelled.
 
 ![](images/TransitionMatrix.PNG)
 
