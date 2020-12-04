@@ -19,7 +19,7 @@ In addition to legal, regulatory, and contractual factors (i.e., the realm of in
 When it comes to successful implementation of PPP, contract survival is considered as one of the highly important factors due to the high costs of early termination and renegotiation. Moreover, PPP cancellation is a clear sign that significant and insurmountable problems between parties to the contract could not be overcome via intra-contractual adjustments, renegotiation, or at extremis, arbitration. Because the transaction costs of contract cancellation and renegotiation are high, the question of how PPPs can be sustained is important. The survival of a contract to its intended term implicitly recognizes that all parties to the contract are sufficiently satisfied with the PPP outcomes, such that they wish to remain in the contractual relationship enshrined within the PPP arrangement.
 
 In this study we develop a predictive model of PPP cancellation. We use contract level data on PPP contracts along with wider control data such as political violence in the country, natural disasters, macro-financial data at a country level, data on the quality of legal and government institutions. We employ a variety of models to predict cancellation. One short-coming of this study is that we do not have time-varying data at a project level.
-# Data Description and Ingestion
+# Dataset Description and Ingestion
 * [PPI Database](https://ppi.worldbank.org/en/ppidata)
 The Private Participation in Infrastructure (PPI) Project Database has data on over 6,400 infrastructure projects in 137 low- and middle-income countries. The database is the leading source of PPI trends in the developing world, covering projects in the energy, transport, water and sewerage, ICT backbone, and Municipal Solid Waste (MSW) sectors (MSW data includes projects since 2008) Projects include management or lease contracts, concessions, greenfield projects, and divestitures.
 
@@ -39,7 +39,7 @@ The World Development Indicators is a compilation of relevant, high-quality, and
 * [International Telecommunication Union Country Codes](https://www.itu.int/online/mm/scripts/gensel8)
 The radiocommunication division of the International Telecommunication Union uses the following letter codes to identify its member countries.
 
-# Data cleaning Challenges
+# Data Cleaning Challenges
 
 The following data cleaning challenges were encountered:
 
@@ -49,7 +49,7 @@ The following data cleaning challenges were encountered:
 
 The biggest challenge was missing data. Most of this data is from low to medium income countries and these countries are precisely the ones with the least amount of data availability.
 
-# Data description
+# Data Items Description
 
 The variables in the database are the follows:
 
