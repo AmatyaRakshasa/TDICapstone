@@ -38,6 +38,17 @@ The World Development Indicators is a compilation of relevant, high-quality, and
 
 * [International Telecommunication Union Country Codes](https://www.itu.int/online/mm/scripts/gensel8)
 The radiocommunication division of the International Telecommunication Union uses the following letter codes to identify its member countries.
+
+# Data cleaning Challenges
+
+The following data cleaning challenges were encountered:
+
+* Randomly duplicated data rows
+* Use of non-standard Codes
+* Incorrect values or incorrect datatypes
+
+The biggest challenge was missing data. Most of this data is from low to medium income countries and these countries are precisely the ones with the least amount of data availability.
+
 # Data description
 
 The variables in the database are the follows:
@@ -358,13 +369,13 @@ Project status falls into four categories, namely "Active", "Distressed", "Concl
 The first decade of the project is where most of the project cancellation risk lies.
 
 
-![](images/ProjectAgeAtCancellationCount.png)
-![](images/ProjectAgeAtCancellationvsContractLength.png)
+
+![](images/ProjectTimeRemainingAtCancellationvsContractLength.png)
+
 
 In the above plot, we see contract length against project age at the time of cancellation. Again we see that the first decade is where most of the cancellation risk resides.
 
-![](images/ProjectTimeRemainingAtCancellation.png)
-![](images/ProjectTimeRemainingAtCancellationvsContractLength.png)
+
 
 # Modeling Approach
 I am following two modelling approaches.
@@ -472,11 +483,15 @@ Below is an example of a transition matrix. We construct one transition matrix f
 
 Below are the results of our three Markov Classifier Models in the three clusters. SMOTE was used to balance classes. We find that while the Markov Classifier seems to do better at accurately predicting cancelled projects, it has too many false positives at this stage for it to be considered a useful model.
 
-![](images/MCCluster0.PNG)
+![](images/MCCluster2.PNG)
 
 ![](images/MCCluster1.PNG)
 
-![](images/MCCluster2.PNG)
+
+![](images/MCCluster0.PNG)
+
+
+
 
 ## Conclusion and Future Work
-More work can be done in feature construction, dimensionality reduction, and clustering in the Markov Classifier Model. 
+More exciting work lies ahead in feature construction, dimensionality reduction, and clustering in the Markov Classifier Model. The model shows a lot of promise and can be improved.
