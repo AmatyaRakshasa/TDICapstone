@@ -32,7 +32,7 @@ The radiocommunication division of the International Telecommunication Union use
 
 # Modeling Approach
 I am following two modelling approaches.
-## Path independence
+## Path Independence
  In the first approach I assume path independence and assume that the confounder variables from the previous year have all relevant information. For instance, consider the following raw data:
  ![](images/RawDataExample.png)
  Here we have two projects. One project stays alive and is successfully concluded when the contract ends. The second project gets cancelled into the third year of its contract. I convert these two data points into 7 data points. The first project converts into 3 data points where it is alive in two years and dead in the third. The second project converts into four data points, one for each year in its contracted period where the project was alive. In the original data set, 1.2% of the projects get cancelled. After exploding the dataset in this fashion, 0.23% of the data represents cancelled projects.
