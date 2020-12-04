@@ -37,8 +37,11 @@ I am following two modelling approaches.
  ![](images/RawDataExample.PNG)
  Here we have two projects. One project stays alive and is successfully concluded when the contract ends. The second project gets cancelled into the third year of its contract. I convert these two data points into 7 data points. The first project converts into 3 data points where it is alive in two years and dead in the third. The second project converts into four data points, one for each year in its contracted period where the project was alive. In the original data set, 1.2% of the projects get cancelled. After exploding the dataset in this fashion, 0.23% of the data represents cancelled projects.
 
- For the path independence approach, I employ a Logistic Classifier, a Decision Tree, and Random Forest Classifier.
+
  ![](images/RawExampleExploded.PNG)
+
+ For the path independence approach, I employ a Logistic Classifier, a Decision Tree, and Random Forest Classifier.
+
 ## Path Dependency
 Every project has two types of information about it, static information that does not change with time and dynamic information which changes with time. I first cluster the data into three clusters based on static information such as contract details and other information about sector, region, and other confounders which are constant for a project and do not change with time. Within each cluster I develop a Markov Classifier. The Markov states are defined by the dynamic confounder variables. I use PCA to reduce the number of dynamic confounders to three and then discretize them into three cuts each to get a 27 valued state variable for each cluster. I then construct a 27x27 transition matrix. I create one transition matrix for the successful projects and one transition matrix for the projects which get cancelled. Then for a given project, I first place it into the appropriate cluster and then within a cluster I classify the project to be successful or failure depending on maximizing the likelihood of the project dynamic variable path resulting from either the successful project transition matrix or the cancelled project transition matrix.   
 ## Main Modelling Challenges
@@ -50,14 +53,14 @@ There are a lot of missing data in terms of contract details and confounder vari
 The biggest shortcoming of this study is that we do not have any project specific time-varying dynamic data. The only project specific data I have is static data on contract details. In the future, this study can be expanded to include time-varying project level data, including satellite data of project site, any period publicly disclosed financial reporting data, and other project specific data from twitter or other sources.
 ## Feature Engineering
 ## Logistic Regression Modeling
-![](images/LogisticConfusion.png)
+![](images/LogisticConfusion.PNG)
 ## Decision Tree Modeling
-![](images/DecisionTreeConfusion.png)
+![](images/DecisionTreeConfusion.PNG)
 ## Random Forest Classifier
-![](images/RandomForestConfusion.png)
-![](images/RFFeatureImportance.png)
+![](images/RandomForestConfusion.PNG)
+![](images/RFFeatureImportance.PNG)
 ## Markov Chain Classifier
-![](images/EventPattern.png)
-![](images/TransitionMatrix.png)
+![](images/EventPattern.PNG)
+![](images/TransitionMatrix.PNG)
 
 ## Conclusion and Future Work
